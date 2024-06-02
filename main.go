@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "embed"
 	"fmt"
 	"log"
 	"os"
@@ -9,7 +10,8 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-const dailyTemplateFile = "./templates/daily.tmpl.md"
+//go:embed templates/daily.tmpl.md
+var dailyTemplate string
 
 var (
 	tmpl          *template.Template
@@ -63,7 +65,7 @@ func writeFile(d DateObject) error {
 
 func init() {
 	var err error
-	tmpl, err = template.ParseFiles(dailyTemplateFile)
+	tmpl, err = template.New("daily").Parse(dailyTemplate)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -75,4 +77,5 @@ func init() {
 	if *initialOffset < 0 {
 		*initialOffset = 0
 	}
+
 }

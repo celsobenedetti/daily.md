@@ -1,10 +1,10 @@
 ---
 id: "{{.Date}}"
 aliases: 
-  - {{.Title}}
+  - "{{.Title}}"
 tags: [] 
 date: "{{.Date}}"
-title: {{.Title}}
+title: "{{.Title}}"
 ---
 
 # {{.Title}}
