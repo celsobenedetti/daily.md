@@ -32,6 +32,7 @@ func run() error {
 		}
 	}
 
+	fmt.Println("Writing files:")
 	for i := 0; i < *n; i++ {
 		d := getDateForOffset(i)
 		err := writeFile(d)
@@ -56,6 +57,7 @@ func writeFile(d DateObject) error {
 		return err
 	}
 
+	fmt.Printf("  ✅ %s\n", filename)
 	return nil
 }
 
