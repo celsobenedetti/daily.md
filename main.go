@@ -47,6 +47,9 @@ func run() error {
 func writeFile(d DateObject) error {
 	filename := fmt.Sprintf("%s.md", d.Date)
 	file, err := os.Create(filename)
+	if err != nil {
+		return err
+	}
 
 	err = tmpl.Execute(file, d)
 	if err != nil {
