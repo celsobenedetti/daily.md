@@ -13,8 +13,9 @@ const dailyTemplateFile = "./templates/daily.tmpl.md"
 
 var (
 	tmpl          *template.Template
-	n             *int = flag.IntP("number", "n", 1, "Number of documents to create")
-	initialOffset *int = flag.IntP("offset", "o", 0, "Number of offset days (from today) to start documents from")
+	n             *int    = flag.IntP("number", "n", 1, "Number of documents to create")
+	initialOffset *int    = flag.IntP("offset", "o", 0, "Number of offset days (from today) to start documents from")
+	dir           *string = flag.StringP("dir", "C", "", "Change to dir before running the command")
 )
 
 func main() {
@@ -24,6 +25,13 @@ func main() {
 }
 
 func run() error {
+	if *dir != "" {
+		err := os.Chdir(*dir)
+		if err != nil {
+			return err
+		}
+	}
+
 	for i := 0; i < *n; i++ {
 		d := getDateForOffset(i)
 		err := writeFile(d)
