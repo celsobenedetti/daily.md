@@ -9,11 +9,9 @@ title: "{{.Title}}"
 
 # {{.Title}}
 
-> What we are doing:
+> What we are doing today:
 
 ## What's next
-
-- [ ] Shutdown complete
 
 ---
 
