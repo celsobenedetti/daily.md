@@ -11,8 +11,6 @@ title: "{{.Title}}"
 
 > What we are doing today:
 
-## What's next
-
 ---
 
 - [[{{.Yesterday}}]]
