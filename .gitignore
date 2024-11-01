@@ -18,7 +18,7 @@
 !LICENSE
 !templates/*.md
 
-# !Makefile
+!Makefile
 
 # ...even if they are in subdirectories
 !*/
