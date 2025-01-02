@@ -9,7 +9,7 @@ title: "{{.Title}}"
 
 # {{.Title}}
 
-> What we are doing today:
+> I'm working on:
 
 ---
 
