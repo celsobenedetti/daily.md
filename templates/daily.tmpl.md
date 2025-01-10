@@ -9,7 +9,9 @@ title: "{{.Title}}"
 
 # {{.Title}}
 
-> I'm working on:
+> I'm working on
+
+> Meetings
 
 ---
 
